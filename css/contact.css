@@ -1,0 +1,192 @@
+* {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: 'Cairo', sans-serif;
+}
+i,
+button,
+input[type="submit"] {
+    cursor: pointer;
+}
+::-webkit-scrollbar {
+    width: .5em;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--iden-second);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--iden);
+}
+:root {
+    --iden: #3729b2;
+    --iden-second: #0fdb9b;
+}
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h1,
+h2 {
+    line-height: 1.2;
+}
+.blue {
+    padding: 20px;
+    background-color: var(--iden);
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.blue > span.logo-cont {
+    padding: 10px;
+    border-radius: 50%;
+    background-color: white;
+    color: var(--iden);
+    width: max-content;
+    font-size: 1.2rem;
+}
+.blue > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    list-style-type: none;
+}
+.blue > ul::before {
+    content: "";
+    width: 80%;
+    height: .5px;
+    background-color: #4d40b9;
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translate(-50%,0);
+}
+.blue > ul li {
+    color: white;
+    padding: 5px;
+    opacity: .8;
+    transition-duration: .3s;
+    cursor: pointer;
+}
+.blue > ul li:hover {
+    background-color: #4d40b9;
+    border-radius: 5px;
+}
+.blue > .small-min {
+    margin: 25px 0 5px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.blue > .small-min P {
+    font-size: .8rem;
+}
+.blue > .small-min p:not(:nth-of-type(2)) {
+    font-weight: bold;
+}
+.blue > .small-min P:not(.info) {
+    opacity: .8;
+}
+.white {
+    background-color: white;
+    padding: 20px;
+}
+.white > .form > h1,
+.white > .form > h2 {
+    font-weight: 400;
+    line-height: 1.3;
+}
+.white > .form > h2 {
+    color: gray;
+}
+.white > .form > .form-cont > form {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+.white > .form > .form-cont > form > *:not(:last-child) {
+    width: 100%;
+    display: block;
+    padding: 5px 10px;
+    border-bottom: .5px solid gray;
+    margin-bottom: 10px;
+}
+.white > .form > .form-cont > form > textarea {
+    min-height: 100px;
+}
+.white > .form > .form-cont > form > .sub-cont {
+    color: var(--iden);
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    margin-top: 20px;
+}
+.white > .form > .form-cont > form > .sub-cont > input {
+    background-color: transparent;
+    font-weight: bold;
+    color: var(--iden);
+}
+.white > .form > .form-cont > .form-sibling p {
+    font-size: .8rem;
+    margin: 10px 0;
+}
+.white > .form > .form-cont > .form-sibling p.gray {
+    color: gray;
+}
+.white > .form > .form-cont > .form-sibling p:not(.gray) {
+    color: var(--iden);
+}
+@media (min-width: 900px) {
+    .parent {
+        background-image: linear-gradient(to right, white 30% , var(--iden) 30%);
+        min-height: 100vh;
+    }
+    .blue-white-cont {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        width: 80%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-55%,-50%);
+    }
+    .blue > ul {
+        flex-direction: column;
+        gap: 0;
+    }
+    .blue::before,
+    .white::before {
+        content: "";
+        width: 10em;
+        height: 10em;
+        border-radius: 50%;
+        position: absolute;
+        background-color: var(--iden-second);
+        z-index: -1;
+    }
+    .blue::before {
+        top: -3em;
+        left: -3em;
+    }
+    .white::before {
+        bottom: -5em;
+        right: -5em;
+    }
+    .white > .form > .form-cont {
+        display: grid;
+        grid-template-columns: repeat(2,48%);
+        gap: 4%;
+    }
+}
